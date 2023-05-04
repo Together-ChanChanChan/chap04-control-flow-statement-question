@@ -1,5 +1,8 @@
 package com.ohgiraffers.section02.looping_and_branching.level03.hard;
 
+import java.util.Scanner;
+import java.util.regex.Pattern;
+
 public class Application3 {
 
 	public static void main(String[] args) {
@@ -30,7 +33,31 @@ public class Application3 {
 		 * -- 출력 예시 --
 		 * 영문자가 아닌 문자가 포함되어 있습니다.
 		 * */
-		
+
+		Scanner sc = new Scanner(System.in);
+		System.out.print("문자열 입력 : ");
+		String str = sc.nextLine();
+		System.out.print("문자 입력 : ");
+		String c = sc.nextLine();
+
+		int count = 0;
+		boolean flag = true;
+		int i = 0;
+
+		while(i < str.length()) {
+			if(Pattern.matches("^[a-zA-Z]*$", str) == false) {
+				System.out.println("영문자가 아닌 문자가 포함되어 있습니다.");
+				flag = false;
+				break;
+			} else if(str.charAt(i) == c.charAt(0)) {
+				count++;
+			}
+			i++;
+		}
+
+		if(flag == true) {
+			System.out.println("포함된 갯수 : " + count);
+		}
 	}
 
 }
