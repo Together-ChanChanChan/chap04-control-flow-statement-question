@@ -1,5 +1,7 @@
 package com.ohgiraffers.section01.conditional.level04.advanced;
 
+import java.util.Scanner;
+
 public class Application2 {
 
 	public static void main(String[] args) {
@@ -36,7 +38,32 @@ public class Application2 {
 		 * ======================
 		 * 총 급여 : 3200000
 		 * */
-		
+
+		Scanner sc = new Scanner(System.in);
+		System.out.print("월 급여 입력 : ");
+		int monthPay = sc.nextInt();
+		System.out.print("매출액 입력 : ");
+		int monthSales = sc.nextInt();
+
+		double bonusRate = 0;
+
+		if ( monthSales > 50000000) {
+			bonusRate = 0.5;
+		} else if ( monthSales > 30000000) {
+			bonusRate = 0.3;
+		} else if ( monthSales > 10000000) {
+			bonusRate = 0.1;
+		}
+
+		int bonus = (int)(monthSales * bonusRate);
+		long totalPay = monthPay + bonus;
+
+		System.out.println("매출액 : " + monthSales);
+		System.out.println("보너스율 : " + (int)(bonusRate * 10) + "%");
+		System.out.println("월 급여 : " + monthPay);
+		System.out.println("보너스 금액 : " + bonus);
+		System.out.println("=========================");
+		System.out.println("총 급여 : " + totalPay);
 	}
 
 }

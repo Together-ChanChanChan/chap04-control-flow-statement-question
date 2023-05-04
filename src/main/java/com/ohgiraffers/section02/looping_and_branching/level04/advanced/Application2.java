@@ -1,5 +1,7 @@
 package com.ohgiraffers.section02.looping_and_branching.level04.advanced;
 
+import java.util.Scanner;
+
 public class Application2 {
 
 	public static void main(String[] args) {
@@ -26,7 +28,36 @@ public class Application2 {
 		 * ============================
 		 * 거스름돈 : 77660원
 		 * */
-		
+
+		Scanner sc = new Scanner(System.in);
+		System.out.print("받으신 금액을 입력하세요 : ");
+		int input = sc.nextInt();
+		System.out.print("상품 가격을 입력하세요 : ");
+		int price = sc.nextInt();
+
+		int change = input - price;
+		int leftChange = change;
+		int money = 50000;
+
+		System.out.println("==================");
+		for(int i = 0; i < 7; i++) {
+			int count = leftChange / money;
+			leftChange = leftChange % money;
+
+			if(i < 4 && count > 0) {
+				System.out.println(money + "원권 지폐" + count + "장");
+			} else if (i >= 4 && count > 0) {
+				System.out.println(money + "원권 동전" + count + "개");
+			}
+
+			if (i % 2 == 0) {
+				money = money / 5;
+			} else {
+				money = money / 2;
+			}
+		}
+		System.out.println("==================");
+		System.out.println("거스름돈 : " + change + "원");
 	}
 
 }
