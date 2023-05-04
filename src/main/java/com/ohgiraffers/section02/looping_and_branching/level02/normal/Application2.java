@@ -9,7 +9,10 @@ public class Application2 {
 		 * -- 출력 예시 --
 		 * abcdefghijklmnopqrstuvwxyz
 		 * */
-		
+
+		for(int i = 97; i < 123; i++) {
+			System.out.print((char)i);
+		}
 	}
 
 }
