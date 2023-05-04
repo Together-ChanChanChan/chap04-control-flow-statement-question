@@ -19,7 +19,7 @@ public class Application1 {
 			System.out.println("반드시 1에서 10사이의 정수를 입력해야 합니다.");
 		} else if (num % 2 == 0) {
 			System.out.println("짝수입니다.");
-		} else if (num % 2 == 1) {
+		} else {
 			System.out.println("홀수입니다.");
 		}
 	}
