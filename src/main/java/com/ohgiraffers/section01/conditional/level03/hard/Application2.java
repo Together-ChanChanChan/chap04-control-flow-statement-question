@@ -1,5 +1,8 @@
 package com.ohgiraffers.section01.conditional.level03.hard;
 
+import java.util.HashMap;
+import java.util.Scanner;
+
 public class Application2 {
 
 	public static void main(String[] args) {
@@ -20,6 +23,23 @@ public class Application2 {
 		 * -- 출력 예시 --
 		 * 바나나의 가격은 3000원 입니다.
 		 * */
+
+		HashMap<String, Integer> sH = new HashMap<>();
+		sH.put("사과", 1000);
+		sH.put("바나나", 3000);
+		sH.put("복숭아", 2000);
+		sH.put("키위", 5000);
+
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("과일 이름을 입력하세요 : ");
+		String inputFruit = sc.nextLine();
+
+		if(sH.containsKey(inputFruit)){
+			System.out.println(inputFruit + "의 가격은 " + sH.get("바나나") + "원 입니다.");
+		}
+		else System.out.println("준비된 상품이 없습니다."); System.exit(0);
+
 		
 	}
 

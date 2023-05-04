@@ -1,5 +1,8 @@
 package com.ohgiraffers.section01.conditional.level04.advanced;
 
+import java.util.HashMap;
+import java.util.Scanner;
+
 public class Application1 {
 
 	public static void main(String[] args) {
@@ -20,6 +23,33 @@ public class Application1 {
 		 * 영어 점수 미달로 불합격입니다.
 		 * 수학 점수 미달로 불합격입니다.
 		 * */
+		HashMap <String, Integer>sH = new HashMap<>();
+
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("국어 점수를 입력하세요 : ");
+		sH.put("국어", Integer.parseInt(sc.nextLine()));
+
+		System.out.print("영어 점수를 입력하세요 : ");
+		sH.put("영어", Integer.parseInt(sc.nextLine()));
+
+		System.out.print("수학 점수를 입력하세요 : ");
+		sH.put("수학", Integer.parseInt(sc.nextLine()));
+
+		int sum = sH.values().stream().reduce(0, Integer::sum);
+		if ((sum / 3) < 60) System.out.println("평균 점수 미달로 불합격입니다.");
+
+		for(String s : sH.keySet()){
+			sum += sH.get(s);
+			if(sH.get(s) < 40) {
+				System.out.println(s + "점수 미달로 불합격입니다.");
+			}
+		}
+
+
+
+
+
 		
 	}
 
