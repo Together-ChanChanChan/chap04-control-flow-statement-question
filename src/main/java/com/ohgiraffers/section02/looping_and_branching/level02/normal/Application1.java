@@ -1,9 +1,19 @@
 package com.ohgiraffers.section02.looping_and_branching.level02.normal;
 
+import java.util.Scanner;
+
 public class Application1 {
 
 	public static void main(String[] args) {
-		
+
+
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.println("문자열을 입력하세요 : ");
+		String word = scanner.next();
+
+
+
 		/* 문자열을 입력 받아서 문자열의 각 인덱스별로 한 글자씩 출력하세요
 		 * 
 		 * 참고) 문자열의 길이는 String 클래스의 length() 메소드를 이용할 수 있습니다.
@@ -18,7 +28,7 @@ public class Application1 {
 		 * 3 : l
 		 * 4 : e
 		 * */
-		
+
 	}
 
 }
